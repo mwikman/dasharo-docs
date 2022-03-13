@@ -94,29 +94,14 @@ via RS232 DB9 cable.
 ## TPM
 
 Asus KGPE-D16 has an LPC header for TPM or debugging. Since there is no other
-option to connect a TPM, we use the header for that purpose.
-
-Example connection of the
-[PC Engines TPM 20pin module](https://3mdeb.com/shop/modules/modules-lpn-plant/tpm-2-0/)
-([tpm1a](https://www.pcengines.ch/schema/tpm1a.pdf)) to the TPM header on the
-KGPE-D16 board:
+option to connect a TPM, we use the header for that purpose. This header is
+compatible with an Asus 20-1 pin LPC TPM 1.2 and 2.0 module.
 
 ![](/images/kgpe_tpm_header.png)
 
-| tpm1a         | Asus KGPE-D16        |
-|:-------------:|:--------------------:|
-| PCLK pin 1    | TPM pin 1  (PCICLK)  |
-| LAD0 pin 3    | TPM pin 11 (LAD0)    |
-| LAD1 pin 5    | TPM pin 10 (LAD1)    |
-| LAD2 pin 7    | TPM pin 8  (LAD2)    |
-| LAD3 pin 9    | TPM pin 7  (LAD3)    |
-| FRAME# pin 11 | TPM pin 3  (FRAME)   |
-| RESET# pin 13 | TPM pin 5  (PCIRST#) |
-| GND pin 17    | TPM pin 2  (GND)     |
-| V3 pin 18     | TPM pin 9  (+3V)     |
-| SERIRQ pin 19 | TPM pin 16 (SERIRQ)  |
-
-> PC Engines TPM schematic is available [here](//www.pcengines.ch/schema/tpm1a.pdf)
+NOTE: connecting a custom TPM with wires will not probably work. The signal
+noise introduced by wires makes the LPC communication with TPM unreliable (TPM
+will not be detected). Tested with PC Engines TPM.
 
 ## Power management
 
