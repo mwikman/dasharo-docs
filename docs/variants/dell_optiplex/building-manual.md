@@ -139,4 +139,3 @@ coreboot refer to [initial deployment manual](initial-deployment.md).
 
 This will produce a debug binary placed in `build/coreboot.rom`. To flash
 coreboot refer to [initial deployment manual](initial-deployment.md).
-
